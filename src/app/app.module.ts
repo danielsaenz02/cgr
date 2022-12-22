@@ -1,27 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MenubarModule} from 'primeng/menubar';
-import {InputTextModule} from 'primeng/inputtext';
-import {CarouselModule} from 'primeng/carousel';
-import { CarouselService } from './services/carousel/carousel.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './modules/home/home.module';
+import { MenuModule } from './modules/menu/menu.module';
+import { LoginModule } from './modules/modulelogin/login.module';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MenubarModule,
-    InputTextModule,
-    CarouselModule,
-    HttpClientModule
+    HomeModule,
+    MenuModule,
+    LoginModule
+
   ],
-  providers: [CarouselService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

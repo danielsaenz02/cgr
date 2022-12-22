@@ -1,0 +1,10 @@
+<p-carousel [value]="images" [numVisible]="1" [circular]="false" [numScroll]="1"
+  [responsiveOptions]="responsiveOptions">
+  <ng-template let-images pTemplate="item">
+    <div class="carousel-inner">
+      <div class="carousel-item image-cover active"
+        style="background-image:url({{images.imagen}});" runat="server">
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
