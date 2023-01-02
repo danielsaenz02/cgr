@@ -8,61 +8,63 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuComponent {
   items: MenuItem[] =[];
+  menu={ 'color':'#0F2A44','font-weight': 'bold',
+  }
   
   ngOnInit() {
     this.items = [
         {
             label: 'Contraloria',
             items: [{
-                    label: 'New', 
+                    label: 'ENTIDAD', 
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Project'},
-                        {label: 'Other'},
+                        {label: 'Organigrama y dependencias'},
+                        {label: 'Símbolos institucionales'},
                     ]
                 },
-                {label: 'Open'},
-                {label: 'Quit'}
+                {label: 'CONTRALOR GENERAL', },
+                {label: 'TALENTO HUMANO', }
             ]
         },
         {
             label: 'Control Fiscal',
             icon: 'pi pi-fw pi-pencil',
             items: [
-                {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-                {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+                {label: 'CONTROL FISCAL MACRO', icon: 'pi pi-fw pi-plus',},
+                {label: 'CONTROL FISCAL MICRO PROCESO AUDITOR', icon: 'pi pi-fw pi-plus',}
             ]
         },
         {
           label: 'Resultados e informes',
           icon: 'pi pi-fw pi-pencil',
           items: [
-              {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-              {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+              {label: 'INFORMES', icon: 'pi pi-fw pi-plus',},
+              {label: 'PROCESO AUDITOR', icon: 'pi pi-fw pi-plus'}
           ]
       },
       {
         label: 'Atención al ciudadano',
         icon: 'pi pi-fw pi-pencil',
         items: [
-            {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-            {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+            {label: 'DATOS ABIERTOS'},
+            {label: 'CARTA DE TRATO DIGNO AL CIUDADANO'}
         ]
     },
     {
       label: 'Transparencia',
       icon: 'pi pi-fw pi-pencil',
       items: [
-          {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-          {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+          {label: 'TRANSPARENCIA Y ACCESO A LA INFORMACIÓN PÚBLICA', },
+         
       ]
   },
   {
     label: 'Participa',
     icon: 'pi pi-fw pi-pencil',
     items: [
-        {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-        {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+        {label: 'GENERALIDADES', },
+        {label: 'CONTROL SOCIAL', }
     ]
 },
 {

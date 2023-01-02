@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MenubarModule} from 'primeng/menubar';
 import { MenuComponent } from 'src/app/menu/menu/menu.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { HomeModule } from '../home/home.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {InputTextModule} from 'primeng/inputtext';
   imports: [
     CommonModule,
     MenubarModule,
-    InputTextModule
+    InputTextModule,
+    HomeModule
   ]
 })
 export class MenuModule { }

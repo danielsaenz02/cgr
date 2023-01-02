@@ -1,10 +1,89 @@
-<p-carousel [value]="images" [numVisible]="1" [circular]="false" [numScroll]="1"
-  [responsiveOptions]="responsiveOptions">
-  <ng-template let-images pTemplate="item">
-    <div class="carousel-inner">
-      <div class="carousel-item image-cover active"
-        style="background-image:url({{images.imagen}});" runat="server">
-      </div>
+<div class="p-1 m-3">
+  <div class="row">
+    <div class="col-sm-12 col-md-3 p-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+      <a routerLink="/home" href="">
+        <p-card [style]="cardAmarilla">
+          <div class="rows">
+            <div class="cols-7">
+              <h2>CERTIFICADO ANTECEDENTES FISCALES</h2>
+            </div>
+            <div class="cols-2 offset-3">
+              <i class="pi pi-book" style="font-size: 2rem"></i>
+            </div>
+          </div>
+          <ng-template pTemplate="footer">
+            <i class="pi pi-arrow-right" style="font-size: 2rem"></i>
+          </ng-template>
+        </p-card>
+      </a>
     </div>
-  </ng-template>
-</p-carousel>
+
+    <div class="col-sm-12 col-md-3 p-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+      <a routerLink="/home" href="">
+        <p-card [style]="cardAzul">
+          <div class="rows">
+            <div class="cols-7">
+              <h2>CERTIFICADO DE INGRESOS</h2>
+            </div>
+            <div class="cols-2 offset-3">
+              <i class="pi pi-chart-bar" style="font-size: 2rem"></i>
+            </div>
+          </div>
+          <ng-template pTemplate="footer">
+            <i class="pi pi-arrow-right" style="font-size: 2rem"></i>
+          </ng-template>
+        </p-card>
+      </a>
+    </div>
+
+    <div class="col-sm-12 col-md-3 p-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+      <a routerLink="/home" href="">
+        <p-card [style]="cardRoja">
+          <div class="rows">
+            <div class="cols-7">
+              <h2>DENUNCIAS, SOLICITUDES, PQRD</h2>
+            </div>
+            <div class="cols-2 offset-3">
+              <i class="pi pi-megaphone" style="font-size: 2rem"></i>
+            </div>
+          </div>
+          <ng-template pTemplate="footer">
+            <i class="pi pi-arrow-right" style="font-size: 2rem"></i>
+          </ng-template>
+        </p-card>
+      </a>
+    </div>
+
+    <div class="col-sm-12 col-md-3 p-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+      <a routerLink="/home" href="">
+        <p-card [style]="cardBlanca">
+          <div class="rows">
+            <div class="cols-7">
+              <h2>NOTIFICACIONES Y CITACIONES</h2>
+            </div>
+            <div class="cols-2 offset-3">
+              <i class="pi pi-calendar-times" style="font-size: 2rem"></i>
+            </div>
+          </div>
+          <ng-template pTemplate="footer">
+            <i class="pi pi-arrow-right" style="font-size: 2rem"></i>
+          </ng-template>
+        </p-card>
+      </a>
+    </div>
+
+    
+  </div>
+</div>
+
+<div class=" " data-aos="fade-up" data-aos-duration="1500">
+  <p-carousel [value]="images" [numVisible]="1" [circular]="true" [numScroll]="1" [autoplayInterval]="3000"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-images pTemplate="item">
+      <div class="carousel-inner">
+        <div class="carousel-item image-cover active" style="background-image:url({{images.imagen}});" runat="server">
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

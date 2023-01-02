@@ -10,8 +10,30 @@ import { CarouselService } from 'src/app/services/carousel/carousel.service';
 export class HomeComponent {
   responsiveOptions: object[] = [];
   images: Carousel[] = [];
+  cardRoja={'background':'#d13204', 'color':'#FFF','font-family':'Helvetica','font-size':'0.875rem','min-height': '1px',
+  'padding-bottom': '1rem',
+  'padding-left': '1rem',
+  'padding-right': '1rem',
+  'padding-top': '1rem',}
+  cardAmarilla={'background':'#FFC700', 'color':'#272833','font-family':'Helvetica !IMPORTANT','font-size':'0.875rem','min-height': '1px',
+  'padding-bottom': '1rem',
+  'padding-left': '1rem',
+  'padding-right': '1rem',
+  'padding-top': '1rem',}
+  cardAzul={'background':'#2e5aac', 'color':'#fff','font-family':'Helvetica','font-size':'0.875rem','min-height': '1px',
+  'padding-bottom': '1rem',
+  'padding-left': '1rem',
+  'padding-right': '1rem',
+  'padding-top': '1rem',}
+  cardBlanca={'background':'#fff', 'color':'#0F2A44','font-family':'Helvetica','font-size':'0.875rem','min-height': '1px',
+  'padding-bottom': '1rem',
+  'padding-left': '1rem',
+  'padding-right': '1rem',
+  'padding-top': '1rem',}
 
-  constructor(private carouselService: CarouselService) {
+  
+
+  constructor() {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -33,11 +55,9 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.carouselService.getCarousel().then(images => {
-      this.images = images;
-    });
-
-
+    this.images = [{imagen:"./assets/images/prueba.jpeg"},
+                  {imagen:"./assets/images/PlanAnticorrupcion_web_banner.jpg"},
+                  {imagen:"./assets/images/planaccion.jpg"},]
   }
 
 }

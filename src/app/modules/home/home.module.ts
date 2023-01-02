@@ -4,7 +4,8 @@ import {CarouselModule} from 'primeng/carousel';
 import { HomeComponent } from 'src/app/home/home/home.component';
 import { CarouselService } from 'src/app/services/carousel/carousel.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import {CardModule} from 'primeng/card';
+import { StyleClassModule } from 'primeng/styleclass';
 
 
 
@@ -14,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     CarouselModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule,
+    StyleClassModule
   ],
   providers:[CarouselService]
   

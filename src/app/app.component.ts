@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,8 @@ import {MenuItem} from 'primeng/api';
 })
 export class AppComponent {
     title = 'appCgr';
-   
-
+    ngOnInit(): void{
+      AOS.init()
+    }
+    
 }
