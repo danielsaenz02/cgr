@@ -63,7 +63,7 @@ export class MenuComponent {
     label: 'Participa',
     icon: 'pi pi-fw pi-pencil',
     items: [
-        {label: 'GENERALIDADES', },
+        {label: 'GENERALIDADES', routerLink:'reports'},
         {label: 'CONTROL SOCIAL', }
     ]
 },

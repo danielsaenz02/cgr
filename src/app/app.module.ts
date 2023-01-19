@@ -8,6 +8,8 @@ import { LoginModule } from './modules/modulelogin/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TicketModule } from './modules/ticket/ticket.module';
+import { ReportsComponent } from './reports/reports/reports.component';
+import { ReportsModule } from './modules/reports/reports.module';
 
 
 
@@ -23,7 +25,8 @@ import { TicketModule } from './modules/ticket/ticket.module';
     MenuModule,
     LoginModule,
     BrowserAnimationsModule,
-    TicketModule
+    TicketModule,
+    ReportsModule
 
   ],
   providers: [],
