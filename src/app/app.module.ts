@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
 import { MenuModule } from './modules/menu/menu.module';
 import { LoginModule } from './modules/modulelogin/login.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { TicketModule } from './modules/ticket/ticket.module';
+
 
 
 
@@ -17,7 +21,9 @@ import { LoginModule } from './modules/modulelogin/login.module';
     AppRoutingModule,
     HomeModule,
     MenuModule,
-    LoginModule
+    LoginModule,
+    BrowserAnimationsModule,
+    TicketModule
 
   ],
   providers: [],

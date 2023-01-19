@@ -7,6 +7,13 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
+import { UserServiceService } from 'src/app/services/user/user-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import {ToastModule} from 'primeng/toast';
+
+
+
+
 
 @NgModule({
   declarations: [LoginComponent],
@@ -14,13 +21,15 @@ import { InputTextModule } from 'primeng/inputtext';
   imports: [
     CommonModule,
     CardModule,
-    CardModule,
     PasswordModule,
     InputTextModule,
     ButtonModule,
     CheckboxModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ToastModule
 
-  ]
+  ],
+  providers:[UserServiceService]
 })
 export class LoginModule { }
