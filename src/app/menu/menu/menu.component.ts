@@ -14,7 +14,7 @@ export class MenuComponent {
   ngOnInit() {
     this.items = [
         {
-            label: 'Contraloria',
+            label: 'Contraloria prueba',
             items: [{
                     label: 'ENTIDAD', 
                     icon: 'pi pi-fw pi-plus',
@@ -25,7 +25,7 @@ export class MenuComponent {
                 },
                 {label: 'CONTRALOR GENERAL', },
                 {label: 'TALENTO HUMANO', }
-            ]
+            ]  
         },
         {
             label: 'Control Fiscal',
