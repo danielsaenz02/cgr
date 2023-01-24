@@ -1,5 +1,5 @@
-export class Rol {
+export interface Rol {
     
-    id: string | undefined;
+    id: string ;
     description: string | undefined;
 }

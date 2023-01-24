@@ -20,6 +20,8 @@ import { TagModule } from 'primeng/tag';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { TicketService } from 'src/app/services/ticket/ticket.service';
 import {DataViewModule} from 'primeng/dataview';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+
 
 
 
@@ -45,7 +47,8 @@ import {DataViewModule} from 'primeng/dataview';
     BadgeModule,
     TagModule,
     ProgressSpinnerModule,
-    DataViewModule
+    DataViewModule,
+    InputTextareaModule
   ],
   providers: [TicketService]
 })

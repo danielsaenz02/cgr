@@ -4,16 +4,19 @@ import {MenubarModule} from 'primeng/menubar';
 import { MenuComponent } from 'src/app/menu/menu/menu.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { HomeModule } from '../home/home.module';
+import { SidemenuComponent } from 'src/app/menu/sidemenu/sidemenu.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 
 @NgModule({
-  declarations: [MenuComponent],
-  exports:[MenuComponent],
+  declarations: [MenuComponent,SidemenuComponent],
+  exports:[MenuComponent,SidemenuComponent],
   imports: [
     CommonModule,
     MenubarModule,
     InputTextModule,
-    HomeModule
+    HomeModule,   
+    PanelMenuModule,
   ]
 })
 export class MenuModule { }

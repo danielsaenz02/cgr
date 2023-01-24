@@ -25,7 +25,7 @@ export class LoginComponent {
     email: "",
     createdAt: "",
     status: "",
-    Rol: this.rol
+    rol: this.rol
   }
 
   constructor(
@@ -41,9 +41,23 @@ export class LoginComponent {
       (result:any) => {
         this.user= result
         this.messageService.add({severity:'success', summary:'Exitoso', detail:'Inicio de sesión exitoso'})
-        localStorage.setItem("iduser", this.user.id)
-        this.router.navigate(['/user/'+this.user.id+'/ticket'])
-        console.log(result)
+        
+        if(this.user.rol.id== "1"){
+          localStorage.setItem("iduser", this.user.id)
+          this.router.navigate(['/user/'+this.user.id+'/ticket'])
+          console.log(result)
+        }
+        if(this.user.rol.id== "2"){
+          localStorage.setItem("iduser", this.user.id)
+          this.router.navigate(['/user/'+this.user.id+'/panel'])
+          console.log(result)
+        }
+        if(this.user.rol.id== "3"){
+          localStorage.setItem("iduser", this.user.id)
+          this.router.navigate(['/user/'+this.user.id+'/ticket'])
+          console.log(result)
+        }
+        
     }, ( error: HttpErrorResponse) => {
       this.messageService.add({life: 4000,severity:'error', summary:'Error', detail: error.error})
     }

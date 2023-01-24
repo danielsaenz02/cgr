@@ -67,10 +67,14 @@ export class MenuComponent {
         {label: 'CONTROL SOCIAL', }
     ]
 },
-{
+{ 
   label: 'Ingresa',
-  icon: 'pi pi-sign-in',
-  routerLink:'login'
+  icon: 'pi pi-plus',
+  items:[
+    {label: 'Registrate', routerLink:'adduserc', icon: 'pi pi-user-plus'},
+    {label: 'Inicia Sesión', routerLink:'login',icon: 'pi pi-sign-in'}
+
+  ]
 }
     ];
     

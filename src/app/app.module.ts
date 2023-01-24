@@ -6,10 +6,10 @@ import { HomeModule } from './modules/home/home.module';
 import { MenuModule } from './modules/menu/menu.module';
 import { LoginModule } from './modules/modulelogin/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { TicketModule } from './modules/ticket/ticket.module';
-import { ReportsComponent } from './reports/reports/reports.component';
 import { ReportsModule } from './modules/reports/reports.module';
+import { UserModule } from './modules/user/user.module';
+import { BodyComponent } from './body/body.component';
 
 
 
@@ -17,6 +17,7 @@ import { ReportsModule } from './modules/reports/reports.module';
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import { ReportsModule } from './modules/reports/reports.module';
     LoginModule,
     BrowserAnimationsModule,
     TicketModule,
-    ReportsModule
+    ReportsModule,
+    UserModule
 
   ],
   providers: [],

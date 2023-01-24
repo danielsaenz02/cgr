@@ -36,11 +36,11 @@
  }
 
  .card {
-     margin-bottom: 20px;
-     border: none;
-     border-radius: 5px;
-     box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
- }
+    padding: 1rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
 
  .card-header,
  .card-footer {
@@ -89,7 +89,7 @@
      font-size: 20px;
      color: #0F2A44;
      font-weight: 700;
-     margin: 0;
+     margin: .5em;
      padding: 0;
  }
 
@@ -186,3 +186,7 @@
 background-color: #0F2A44;
 color:#fd778b ;
 }
+.ticket-description {
+    margin: 0 0 1rem 0;
+}
+
