@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'contraloriacgr'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D6EF79E5ECE24CA492D99D95D6059B11 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_30A64D9B779E4A368C29A69E5EB92FD8 }}
           package: '*.jar'
