@@ -1,0 +1,138 @@
+
+
+.card {
+   padding: 1rem;
+   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+   border-radius: 4px;
+   margin-bottom: 1rem;
+}
+
+.card-header,
+.card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+}
+
+.card-title h6{
+    padding: 20px 0 15px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
+.card-title-one{
+   padding: 20px 0 15px 0;
+   font-size: 30px;
+   font-weight: 500;
+   color: #012970;
+   font-family: "Poppins", sans-serif;
+}
+
+.card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-body {
+    padding: 0 ;
+}
+
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Info Cards */
+.info-card {
+    padding-bottom: 20px;
+}
+
+
+.info-card h6 {
+    font-size: 22px;
+    color: #0F2A44;
+    font-weight: 700;
+    margin: .5em;
+    padding: 0;
+}
+.info-card h5 {
+    font-size: 18px;
+    color: #0F2A44;
+    font-weight: 700;
+    margin: .5em;
+    padding: 0;
+}
+
+
+.card-icon {
+    font-size: 33px;
+    line-height: 0;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.card-icon i{
+    font-size: 2rem;
+    
+}
+.ticket-description i{
+    font-size: 2rem;
+}
+.image{
+    height: 100px;
+}
+@media only screen and (max-width: 600px) {
+    .card-title h6 {
+      font-size: 16px;
+    }
+    .info-card h5{
+        font-size: 14px;
+    }
+    .card-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .card-icon i{
+        font-size: 1.5rem;
+       
+    }
+    .ticket-description i{
+        font-size: 1.5rem;
+    }
+    .image{
+        height: 75px;
+    }
+  }
+
+.ticket-description {
+   margin: 0 0 1rem 0;
+}
+
+.exclamation-card .card-icon {
+    background-color: gold;
+    color: #272833;
+}
+.pdf-file  {
+    color: #c63737;
+ }
+ .word-file  {
+    color: #0a6cc7;
+ }
+ .excel-file  {
+    color: #0e7a00fd;
+ }
+ .ppt-file  {
+    color: #f14949;
+ }
+ .code{
+    font-size: 25px;
+    font-weight: 700;
+    color: #012970;
+    
+ }
+
+
+

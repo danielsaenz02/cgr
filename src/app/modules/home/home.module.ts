@@ -6,6 +6,7 @@ import { CarouselService } from 'src/app/services/carousel/carousel.service';
 import { HttpClientModule } from '@angular/common/http';
 import {CardModule} from 'primeng/card';
 import { StyleClassModule } from 'primeng/styleclass';
+import {ButtonModule} from 'primeng/button';
 
 
 
@@ -17,7 +18,8 @@ import { StyleClassModule } from 'primeng/styleclass';
     CarouselModule,
     HttpClientModule,
     CardModule,
-    StyleClassModule
+    StyleClassModule,
+    ButtonModule
   ],
   providers:[CarouselService]
   

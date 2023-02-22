@@ -7,9 +7,18 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  showChatbot: boolean = false;
+  buttonChatbot: boolean = true;
+
+
     title = 'appCgr';
     ngOnInit(): void{
       AOS.init()
     }
+
+  changeIcon(){
+    this.buttonChatbot=!this.buttonChatbot
+    this.showChatbot = !this.showChatbot
+  }
     
 }

@@ -8,15 +8,23 @@
         </button>
     </div>
     <ul class="layout-sidebar-nav">
+
         <li class="layout-sidebar-nav-item">
-            <a (click)="navigateUSer()"  class="layout-sidebar-nav-link" >
+            <a   class="layout-sidebar-nav-link" >
+                <i class="layout-sidebar-link-icon pi pi-home"></i>
+                <span class="layout-sidebar-link-text"> Dashboard</span>
+            </a>
+        </li>
+
+        <li class="layout-sidebar-nav-item">
+            <a [routerLink]="['/user', idUser, 'panel', 'adduser']"  class="layout-sidebar-nav-link" >
                 <i class="layout-sidebar-link-icon pi pi-user"></i>
                 <span class="layout-sidebar-link-text"> Usuarios</span>
             </a>
         </li>
 
         <li class="layout-sidebar-nav-item">
-            <a href="" class="layout-sidebar-nav-link">
+            <a [routerLink]="['/user', idUser, 'panel', 'tickets']" class="layout-sidebar-nav-link">
                 <i class="layout-sidebar-link-icon pi pi-ticket"></i>
                 <span class="layout-sidebar-link-text"> Tickets</span>
             </a>

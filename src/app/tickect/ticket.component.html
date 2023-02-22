@@ -50,7 +50,8 @@
                     .createdAt}}</span></h5>
 
                 <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <div
+                    class="card-icon exclamation-card-card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="pi pi pi-send" style="font-size: 2rem" *ngIf="ticketsList.status == 'n'"></i>
                     <i class="pi pi-spin pi-sync" style="font-size: 2rem" *ngIf="ticketsList.status == 'a'"></i>
                     <i class="pi pi-check-circle" style="font-size: 2rem" *ngIf="ticketsList.status == 'r'"></i>
@@ -61,7 +62,7 @@
                     <h6>{{ticketsList .description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vero
                       voluptatem necessitatibus? Expedita nisi enim pariatur ab accusamus! Enim nulla deserunt tempore
                       exercitationem
-                      ipsum eaque quod voluptate non beatae temporibus! </h6>
+                      ipsum eaque quod voluptate non beatae temporibus! lo </h6>
                   </div>
                 </div>
 
@@ -91,7 +92,7 @@
   <ng-template pTemplate="content">
     <div class="field">
       <label for="title">Título</label>
-      <input type="text" pInputText id="name" required autofocus [(ngModel)] ="ticket.title"/>
+      <input type="text" pInputText id="name" required autofocus [(ngModel)]="ticket.title" />
       <small class="p-error">Título del ticket requerido.</small>
     </div>
     <div class="field">
@@ -99,7 +100,7 @@
 
 
 
-      <p-dropdown [options]="ticketsList" inputId="inventoryStatus" placeholder="Select" >
+      <p-dropdown [options]="ticketsList" inputId="inventoryStatus" placeholder="Select">
         <ng-template let-ticketsList.status pTemplate="item">
           <span class="text-muted medium pt-1 p-2">Estado: </span>
           <span [class]="'status-badge status-N'">NUEVO</span>
@@ -107,7 +108,8 @@
       </p-dropdown>
       <div class="field">
         <label for="description">Descripción del ticket</label>
-        <textarea id="description" pInputTextarea required rows="3" cols="20" [(ngModel)] ="ticket.description"></textarea>
+        <textarea id="description" pInputTextarea required rows="3" cols="20"
+          [(ngModel)]="ticket.description"></textarea>
       </div>
 
 

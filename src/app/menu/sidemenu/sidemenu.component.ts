@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { Sidebar } from 'primeng/sidebar';
@@ -13,17 +13,27 @@ interface SideNavToggle {
   templateUrl: './sidemenu.component.html',
   styleUrls: ['./sidemenu.component.css']
 })
-export class SidemenuComponent {
+export class SidemenuComponent implements OnInit {
 
   @Output() onToggleSideNav : EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed: boolean = false
   screenWidth = 0;
-  adduserc="adduserc";
+  idUser = localStorage.getItem("iduser");
+
+  
   constructor( private router: Router) { }
 
+  @HostListener('window:resize', ['$event'])
 
-
-  ngOnInit() {
+  onResize(event:any){
+    this.screenWidth=window.innerWidth;
+    if(this.screenWidth<= 767){
+      this.collapsed = false
+      this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth})
+    }
+  }
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
   }
   openSideMenu() : void {
     this.collapsed = !this.collapsed;

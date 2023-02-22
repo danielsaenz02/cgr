@@ -10,6 +10,9 @@ import { TicketModule } from './modules/ticket/ticket.module';
 import { ReportsModule } from './modules/reports/reports.module';
 import { UserModule } from './modules/user/user.module';
 import { BodyComponent } from './body/body.component';
+import {ButtonModule} from 'primeng/button';
+import { DenunciaModule } from './modules/denuncia/denuncia.module';
+
 
 
 
@@ -17,6 +20,7 @@ import { BodyComponent } from './body/body.component';
 @NgModule({
   declarations: [
     AppComponent,
+    
 
   ],
   imports: [
@@ -28,7 +32,9 @@ import { BodyComponent } from './body/body.component';
     BrowserAnimationsModule,
     TicketModule,
     ReportsModule,
-    UserModule
+    UserModule,
+    ButtonModule,
+    DenunciaModule
 
   ],
   providers: [],

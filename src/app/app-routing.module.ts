@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DenunciaComponent } from './denuncia/denuncia.component';
 import { HomeComponent } from './home/home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { ReportsComponent } from './reports/reports/reports.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'',
+    path:'home',
     component:HomeComponent,
     
   },
@@ -25,7 +26,10 @@ const routes: Routes = [
   },
   {
     path:'user/:iduser/panel',
-    component:UserEmpleadoComponent,
+    component:UserEmpleadoComponent,children: [
+      {path: 'adduser', component: UserCiudadanoComponent},
+      {path: 'tickets', component: TicketComponent}
+    ]
   },
   {
     path:'reports',
@@ -36,8 +40,12 @@ const routes: Routes = [
     component:UserCiudadanoComponent,
   },
   {
+    path:'anexosdenuncia/:iddenuncia',
+    component:DenunciaComponent,
+  },
+  {
     path:'**',
-    redirectTo:""
+    redirectTo:"home"
   },
   
   
