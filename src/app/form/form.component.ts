@@ -17,6 +17,7 @@ export class FormComponent{
   user: Usuarios = {
     id: '',
     name: undefined,
+    correo: undefined,
     identificactionNumber: undefined,
     typeRequest: '',
     filedNumber: ''
@@ -58,8 +59,7 @@ export class FormComponent{
   constructor(private messageService: MessageService, private userService: UserServiceService, private fb: FormBuilder){}
 
   onSubmit():void{
-    if(this.formtest.value.cedula=='' || this.formtest.value.cedula==null){
-      this.messageService.add({ severity: 'error', summary: "Número de identificación inválido", detail: '',life: 3000 });
+    if(this.formtest.value.cedula==null){
     }
     else{
       this.userService.FindbyIdentificationNumber(this.formtest.value.cedula).subscribe((result : any) =>
@@ -104,7 +104,6 @@ export class FormComponent{
     this.changebttn2 = false;
   }
   saveform(){ 
-    if(this.formtestG.value.Recibida!='' && this.formtestG.value.Acorde!='' && this.formtestG.value.Agendar!=''){
       this.form.question_one = this.formtestG.value.Recibida;
       this.form.question_two = this.formtestG.value.Acorde;
       this.form.question_three = this.formtestG.value.Agendar;
@@ -112,14 +111,10 @@ export class FormComponent{
       this.form.status = 's';
       this.userService.saveform(this.form).subscribe((result:any) => 
       {this.form= result 
-      this.messageService.add({severity:'success', summary:'Exitoso', detail:'Solicitud Enviada'})
+      this.messageService.add({severity:'success', summary:'Realizado', detail:'Solicitud Enviada'})
       console.log(result)}, 
       ( error: HttpErrorResponse) => 
       { 
       this.messageService.add({life: 4000,severity:'error', summary:'Error', detail: error.error})} )
-    }
-    else{
-      this.messageService.add({severity:'info', summary:'Error', detail:'Todos los campos son requeridos'})
-    }
   }
 }
