@@ -1,5 +1,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
 <div id="container">
     <div class="header">
         <img src="../../assets/images/BannerW.png" alt="Banner CGR" style="width:25%">
@@ -14,12 +13,10 @@
 <form class="form" [formGroup]="formtest" (submit)="onSubmit()">
     <div>
         <h4>Por favor diligencie su número de identificación</h4>
-            <input type="text" class="input" placeholder="1,072,675,128" formControlName="cedula" (click)="showspan()" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-            <br>
-            <span style="color:red" *ngIf="formtest.get('cedula')?.invalid && flagspan">
+            <input type="text" class="input" placeholder="123457890" formControlName="cedula" (click)="showspan()" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <div class="span" *ngIf="formtest.get('cedula')?.invalid && flagspan">
                 Escriba un número de identificación válido
-            </span>
-            <br><br>
+            </div>
             <div class="btts">
             <button pButton type="submit" [disabled]="!formtest.valid" label="Consultar" ></button>
             </div>
@@ -37,40 +34,43 @@
 <div class="formGeneral" *ngIf="ShowinfoDB">
     <form class="form" [formGroup]="formtestG" (submit)="onSubmitG()">
         <div>
-            <h4>1. ¿Recibió  la respuesta a su solicitud?</h4>
+            <div class="spanC" *ngIf="formtestG.get('Recibida')?.invalid || formtestG.get('Acorde')?.invalid || formtestG.get('Agendar')?.invalid">
+            Campos requeridos*
+            </div>
+                <h4>1. ¿Recibió  la respuesta a su solicitud?
+            <div class="spanG" *ngIf="formtestG.get('Recibida')?.invalid">
+                *
+            </div>
+             </h4>
             <p-radioButton type="radio" name="Recibida" value="Si" formControlName="Recibida"></p-radioButton>
             <label name="Recibida"> Sí</label><br><br>
             <p-radioButton type="radio" name="Recibida" value="No" formControlName="Recibida"></p-radioButton>
             <label name="Recibida"> No</label><br><br>
-            <span style="color:red" *ngIf="formtestG.get('Recibida')?.invalid">
-                Campo requerido
-            </span>
-            <br><br>
         </div>
         <div>
-            <h4>2. ¿La respuesta recibida fue clara y acorde con su solicitud?</h4>
+            <h4>2. ¿La respuesta recibida fue clara y acorde con su solicitud?
+            <div class="spanG" *ngIf="formtestG.get('Acorde')?.invalid">
+                *
+            </div>
+            </h4>
             <p-radioButton type="radio" name="Acorde" value="Si" formControlName="Acorde"></p-radioButton>
             <label name="Acorde"> Sí</label><br><br>
             <p-radioButton type="radio" name="Acorde" value="No" formControlName="Acorde"></p-radioButton>
             <label name="Acorde"> No</label><br><br>
-            <span style="color:red" *ngIf="formtestG.get('Acorde')?.invalid">
-                Campo requerido
-            </span>
-            <br><br>
         </div>
         <div>
-            <h4>3. ¿Desea agendar una reunión con un funcionario de la CGR para aclarar sus dudas?</h4>
-            <p-radioButton type="radio" name="Agendar" value="Si" formControlName="Agendar"></p-radioButton>
+            <h4>3. ¿Desea agendar una reunión con un funcionario de la CGR para aclarar sus dudas?
+            <div class="spanG" *ngIf="formtestG.get('Agendar')?.invalid">
+                *
+            </div>
+            </h4>
+            <p-radioButton type="radio" name="Agendar" value="Si" (click)="changebuttonE()" formControlName="Agendar"></p-radioButton>
             <label name="Agendar"> Sí</label><br><br>
-            <p-radioButton type="radio" name="Agendar" value="No" formControlName="Agendar"></p-radioButton>
+            <p-radioButton type="radio" name="Agendar" value="No" (click)="changebuttonA()" formControlName="Agendar"></p-radioButton>
             <label name="Agendar"> No</label><br><br>
-            <span style="color:red" *ngIf="formtestG.get('Agendar')?.invalid">
-                Campo requerido
-            </span>
-            <br><br>
             <div class="btts">
-                <button pButton type="submit" [disabled]="!formtestG.valid" label="Enviar" *ngIf="changebttn1" (click)="saveform()"></button>
-                <button pButton type="submit" [disabled]="!formtestG.valid" label="Agendar" *ngIf="changebttn2" (click)="saveform()"></button>
+                <button *ngIf="changebttn1" pButton type="submit" [disabled]="!formtestG.valid" label="Enviar"  (click)="saveform()"></button>
+                <button *ngIf="changebttn2" pButton type="submit" [disabled]="!formtestG.valid" label="Agendar"  (click)="saveform()"></button>
                 </div>
             </div>
     </form>
@@ -107,4 +107,3 @@
 </div>
 </div>
 </div>
-</body>
