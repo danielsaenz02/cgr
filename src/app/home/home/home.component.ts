@@ -30,6 +30,9 @@ export class HomeComponent {
   'padding-left': '1rem',
   'padding-right': '1rem',
   'padding-top': '1rem',}
+  showChatbot: boolean = false;
+  buttonChatbot: boolean = true;
+
 
   
 
@@ -58,6 +61,10 @@ export class HomeComponent {
     this.images = [{imagen:"./assets/images/prueba.jpeg"},
                   {imagen:"./assets/images/PlanAnticorrupcion_web_banner.jpg"},
                   {imagen:"./assets/images/planaccion.jpg"},]
+  }
+  changeIcon(){
+    this.buttonChatbot=!this.buttonChatbot
+    this.showChatbot = !this.showChatbot
   }
 
 }

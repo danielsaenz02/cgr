@@ -133,6 +133,13 @@
     color: #012970;
     
  }
-
+ .p-fileupload .p-fileupload-buttonbar button:nth-child(3):disabled{
+    opacity: 0.5;
+    cursor:default;
+    color:#012970 ;
+  }
+  .p-fileupload .p-fileupload-buttonbar button:nth-child(2){
+    display:none;
+}
 
 

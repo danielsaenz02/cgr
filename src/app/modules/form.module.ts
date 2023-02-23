@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent } from './form.component';
+
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
@@ -13,6 +13,7 @@ import { MessageService } from 'primeng/api';
 import {CardModule} from 'primeng/card';
 import { UserServiceService } from 'src/app/services/form-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from '../form/form.component';
 
 @NgModule({
     declarations: [

@@ -14,10 +14,14 @@ export class DenunciaComponent {
 
   cardRoja = { 'background': '#d13204' }
   uploadedFiles: any[] = [];
-  files: File = new File([], '');
+  files: File[] = [];
   idDenuncia: string | null = "";
   newCodeDialog: boolean = false;
   selectedFiles!: FileList;
+
+  newAviso: boolean = false;
+  showArchivos :boolean = true;
+
 
   complaint: Complaint ={
     id: '',
@@ -42,11 +46,11 @@ export class DenunciaComponent {
   }
 
   validateFiles(event: any) {
-    let files: File[] = event.files;
+    this.files = event.files;
     let fileNameRegex = /^[0-9a-zA-Z-_]+\.(doc|docx|xls|xlsx|ppt|pptx|pdf|rtf|bmp|gif|jpeg|txt|jpg|tif|png)$/;
     let totalSize = 0;
     let valid = true;
-    for (let file of files) {
+    for (let file of this.files) {
       let fileName = file.name;
       totalSize += file.size;
 
@@ -65,8 +69,37 @@ export class DenunciaComponent {
     return valid;
 
   }
+
+  validateFilesSubmit(event: any) {
+    this.files = event.files;
+    let fileNameRegex = /^[0-9a-zA-Z-_]+\.(doc|docx|xls|xlsx|ppt|pptx|pdf|rtf|bmp|gif|jpeg|txt|jpg|tif|png)$/;
+    let totalSize = 0;
+    let valid = true;
+    for (let file of this.files) {
+      let fileName = file.name;
+      totalSize += file.size;
+
+      if (!fileNameRegex.test(fileName) || fileName.length > 100) {
+        valid = false;
+        break;
+      }
+
+      if (totalSize > 50 * 1024 * 1024) {
+        valid = false;
+        break;
+      }
+    }
+    return valid;
+
+  }
   openNew() {
     this.newCodeDialog = true;
+  }
+  openSubmit(event: any) {
+    let valid = this.validateFilesSubmit(event);
+    if(valid){
+    this.newAviso = true;
+    this.showArchivos= false;}
   }
 
   onUpload(event: any) {
@@ -84,7 +117,7 @@ export class DenunciaComponent {
     this.updateComplaintById()
         setTimeout(() => {
         this.openNew();
-        },3000);
+        },1000);
 
     }else{
       this.messageService.add({ severity: 'error', summary: 'Revisa tus archivos', detail: '', life: 7000 });

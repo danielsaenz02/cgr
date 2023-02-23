@@ -13,6 +13,9 @@ import { BodyComponent } from './body/body.component';
 import {ButtonModule} from 'primeng/button';
 import { DenunciaModule } from './modules/denuncia/denuncia.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormModule } from './modules/form.module';
+
 
 
 
@@ -20,8 +23,6 @@ import { DenunciaModule } from './modules/denuncia/denuncia.module';
 @NgModule({
   declarations: [
     AppComponent,
-    
-
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,9 @@ import { DenunciaModule } from './modules/denuncia/denuncia.module';
     ReportsModule,
     UserModule,
     ButtonModule,
-    DenunciaModule
+    DenunciaModule,
+    FormModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],
