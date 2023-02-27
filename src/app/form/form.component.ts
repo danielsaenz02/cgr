@@ -33,6 +33,7 @@ export class FormComponent{
   flagtest : boolean = true;
   flagspan : boolean = false;
   flagspanG : boolean = false;
+  flagload: boolean = false;
 
   ShowinfoDB : boolean = false;
   ShowConsult : boolean = true;
@@ -59,6 +60,7 @@ export class FormComponent{
   constructor(private messageService: MessageService, private userService: UserServiceService, private fb: FormBuilder){}
 
   onSubmit():void{
+    this.flagload = true;
     if(this.formtest.value.cedula==null){
     }
     else{
@@ -69,10 +71,11 @@ export class FormComponent{
       this.ShowinfoDB = true;
       this.ShowConsult = false;
       this.flagsend = true;
+      this.flagload = false;
     },
-
       (error:HttpErrorResponse) => 
     {
+      this.flagload = false;
       this.messageService.add({life: 3000,severity:'error', summary:'Error', detail: error.error})
     }); 
   }

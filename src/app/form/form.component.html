@@ -8,6 +8,7 @@
             la cual nos ayudará a conocer si la respuesta brindada por parte de la CGR fue clara
             y acorde a su solicitud.</p>
     </div>
+<<<<<<< HEAD
     <div class="secondpart">
         <div class="formconsult" *ngIf="ShowConsult">
             <form class="form" [formGroup]="formtest" (submit)="onSubmit()">
@@ -22,6 +23,74 @@
                     <div class="btts">
                         <button pButton type="submit" [disabled]="!formtest.valid" label="Consultar"></button>
                     </div>
+=======
+<div class="secondpart">
+<div class="formconsult" *ngIf="ShowConsult">
+<form class="form" [formGroup]="formtest" (submit)="onSubmit()">
+    <div>
+        <h4>Por favor diligencie su número de identificación</h4>
+            <input type="text" class="input" placeholder="123457890" formControlName="cedula" (click)="showspan()" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <div class="span" *ngIf="formtest.get('cedula')?.invalid && flagspan">
+                Escriba un número de identificación válido
+            </div>
+            <div class="btts" *ngIf="!flagload">
+            <button pButton type="submit" [disabled]="!formtest.valid" label="Consultar" ></button>
+            </div>
+            <div class="spinner">
+            <p-progressSpinner [style]="{width: '50px', height: '50px'}" styleClass="custom-spinner" strokeWidth="5" fill="var(--surface-ground)" animationDuration="1s" *ngIf="flagload"></p-progressSpinner>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="infoDB">
+    <div *ngIf="ShowinfoDB">
+        <p> Estimado(a) <strong>{{user.name}}</strong>, su opinión es muy importante para nosotros. Por favor responda 
+            las preguntas que se muestran a continuación para su <strong>{{user.typeRequest}}</strong> con número 
+            de radicado <strong>{{user.filedNumber}}</strong>.
+        </p>
+    </div>
+</div>
+<div class="formGeneral" *ngIf="ShowinfoDB">
+    <form class="form" [formGroup]="formtestG" (submit)="onSubmitG()">
+        <div>
+            <div class="spanC" *ngIf="formtestG.get('Recibida')?.invalid || formtestG.get('Acorde')?.invalid || formtestG.get('Agendar')?.invalid">
+            Campos requeridos*
+            </div>
+                <h4>1. ¿Recibió  la respuesta a su solicitud?
+            <div class="spanG" *ngIf="formtestG.get('Recibida')?.invalid">
+                *
+            </div>
+             </h4>
+            <p-radioButton type="radio" name="Recibida" value="Si" formControlName="Recibida"></p-radioButton>
+            <label name="Recibida"> Sí</label><br><br>
+            <p-radioButton type="radio" name="Recibida" value="No" formControlName="Recibida"></p-radioButton>
+            <label name="Recibida"> No</label><br><br>
+        </div>
+        <div>
+            <h4>2. ¿La respuesta recibida fue clara y acorde con su solicitud?
+            <div class="spanG" *ngIf="formtestG.get('Acorde')?.invalid">
+                *
+            </div>
+            </h4>
+            <p-radioButton type="radio" name="Acorde" value="Si" formControlName="Acorde"></p-radioButton>
+            <label name="Acorde"> Sí</label><br><br>
+            <p-radioButton type="radio" name="Acorde" value="No" formControlName="Acorde"></p-radioButton>
+            <label name="Acorde"> No</label><br><br>
+        </div>
+        <div>
+            <h4>3. ¿Desea agendar una reunión con un funcionario de la CGR para aclarar sus dudas?
+            <div class="spanG" *ngIf="formtestG.get('Agendar')?.invalid">
+                *
+            </div>
+            </h4>
+            <p-radioButton type="radio" name="Agendar" value="Si" (click)="changebuttonE()" formControlName="Agendar"></p-radioButton>
+            <label name="Agendar"> Sí</label><br><br>
+            <p-radioButton type="radio" name="Agendar" value="No" (click)="changebuttonA()" formControlName="Agendar"></p-radioButton>
+            <label name="Agendar"> No</label><br><br>
+            <div class="btts">
+                <button *ngIf="changebttn1" pButton type="submit" [disabled]="!formtestG.valid" label="Enviar"  (click)="saveform()"></button>
+                <button *ngIf="changebttn2" pButton type="submit" [disabled]="!formtestG.valid" label="Agendar"  (click)="saveform()"></button>
+>>>>>>> c0fe461c867bebf077a4fa91feba00c1bf017748
                 </div>
             </form>
         </div>
@@ -119,4 +188,21 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+    <div *ngIf="Showthanks2">
+        <div class="containerbanner">
+        <img src="../../assets/images/bannerweb.png" alt="Banner CGR" style="width:100%">
+        </div>
+    <p>
+        ​A continuación lo invitamos a agendar la sesión para aclarar sus inquietudes 
+        en el siguiente enlace: <a href="https://outlook.office365.com/owa/calendar/ReservasCGR@contraloriageneral.com/bookings/">Programación en línea</a>.
+        <br><br>Agradecemos su participación en las actividades de promoción y desarrollo de 
+        Control Fiscal Participativo, para nosotros es muy importante contar con su apoyo.
+        <img src="../../assets/images/Footer_mails.png" alt="Footer CGR" style="width:100%">
+    </p>
+    </div>
+</div>
+</div>
+>>>>>>> c0fe461c867bebf077a4fa91feba00c1bf017748
 </div>
