@@ -5,6 +5,7 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { ReportsComponent } from './reports/reports/reports.component';
+import { SuperComponent } from './super/super/super.component';
 import { TicketComponent } from './tickect/ticket.component';
 import { UserCiudadanoComponent } from './user/user-ciudadano/user-ciudadano.component';
 import { UserEmpleadoComponent } from './user/user-empleado/user-empleado.component';
@@ -49,8 +50,12 @@ const routes: Routes = [
     component:FormComponent,
   },
   {
+    path:'superintendencias',
+    component:SuperComponent,
+  },
+  {
     path:'**',
-    redirectTo:"home"
+    redirectTo:""
   },
   
   

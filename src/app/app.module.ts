@@ -15,6 +15,8 @@ import { DenunciaModule } from './modules/denuncia/denuncia.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormModule } from './modules/form.module';
+import { SuperComponent } from './super/super/super.component';
+import { SuperModule } from './modules/super/super.module';
 
 
 
@@ -38,6 +40,7 @@ import { FormModule } from './modules/form.module';
     DenunciaModule,
     FormModule,
     ReactiveFormsModule,
+    SuperModule
 
   ],
   providers: [],

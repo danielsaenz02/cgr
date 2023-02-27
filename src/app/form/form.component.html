@@ -3,107 +3,120 @@
     <div class="header">
         <img src="../../assets/images/BannerW.png" alt="Banner CGR" style="width:25%">
         <h1><strong>Encuesta de retroalimentación</strong></h1>
-        <p>Estimado ciudadano, con el fin de realizar seguimiento a su proceso, 
-            solicitamos amablemente diligenciar la siguiente encuesta de retroalimentación, 
-            la cual nos ayudará a conocer si la respuesta brindada por parte de la CGR fue clara 
+        <p>Estimado ciudadano, con el fin de realizar seguimiento a su proceso,
+            solicitamos amablemente diligenciar la siguiente encuesta de retroalimentación,
+            la cual nos ayudará a conocer si la respuesta brindada por parte de la CGR fue clara
             y acorde a su solicitud.</p>
     </div>
-<div class="secondpart">
-<div class="formconsult" *ngIf="ShowConsult">
-<form class="form" [formGroup]="formtest" (submit)="onSubmit()">
-    <div>
-        <h4>Por favor diligencie su número de identificación</h4>
-            <input type="text" class="input" placeholder="123457890" formControlName="cedula" (click)="showspan()" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-            <div class="span" *ngIf="formtest.get('cedula')?.invalid && flagspan">
-                Escriba un número de identificación válido
-            </div>
-            <div class="btts">
-            <button pButton type="submit" [disabled]="!formtest.valid" label="Consultar" ></button>
-            </div>
-        </div>
-    </form>
-</div>
-<div class="infoDB">
-    <div *ngIf="ShowinfoDB">
-        <p> Estimado(a) <strong>{{user.name}}</strong>, su opinión es muy importante para nosotros. Por favor responda 
-            las preguntas que se muestran a continuación para su <strong>{{user.typeRequest}}</strong> con número 
-            de radicado <strong>{{user.filedNumber}}</strong>.
-        </p>
-    </div>
-</div>
-<div class="formGeneral" *ngIf="ShowinfoDB">
-    <form class="form" [formGroup]="formtestG" (submit)="onSubmitG()">
-        <div>
-            <div class="spanC" *ngIf="formtestG.get('Recibida')?.invalid || formtestG.get('Acorde')?.invalid || formtestG.get('Agendar')?.invalid">
-            Campos requeridos*
-            </div>
-                <h4>1. ¿Recibió  la respuesta a su solicitud?
-            <div class="spanG" *ngIf="formtestG.get('Recibida')?.invalid">
-                *
-            </div>
-             </h4>
-            <p-radioButton type="radio" name="Recibida" value="Si" formControlName="Recibida"></p-radioButton>
-            <label name="Recibida"> Sí</label><br><br>
-            <p-radioButton type="radio" name="Recibida" value="No" formControlName="Recibida"></p-radioButton>
-            <label name="Recibida"> No</label><br><br>
-        </div>
-        <div>
-            <h4>2. ¿La respuesta recibida fue clara y acorde con su solicitud?
-            <div class="spanG" *ngIf="formtestG.get('Acorde')?.invalid">
-                *
-            </div>
-            </h4>
-            <p-radioButton type="radio" name="Acorde" value="Si" formControlName="Acorde"></p-radioButton>
-            <label name="Acorde"> Sí</label><br><br>
-            <p-radioButton type="radio" name="Acorde" value="No" formControlName="Acorde"></p-radioButton>
-            <label name="Acorde"> No</label><br><br>
-        </div>
-        <div>
-            <h4>3. ¿Desea agendar una reunión con un funcionario de la CGR para aclarar sus dudas?
-            <div class="spanG" *ngIf="formtestG.get('Agendar')?.invalid">
-                *
-            </div>
-            </h4>
-            <p-radioButton type="radio" name="Agendar" value="Si" (click)="changebuttonE()" formControlName="Agendar"></p-radioButton>
-            <label name="Agendar"> Sí</label><br><br>
-            <p-radioButton type="radio" name="Agendar" value="No" (click)="changebuttonA()" formControlName="Agendar"></p-radioButton>
-            <label name="Agendar"> No</label><br><br>
-            <div class="btts">
-                <button *ngIf="changebttn1" pButton type="submit" [disabled]="!formtestG.valid" label="Enviar"  (click)="saveform()"></button>
-                <button *ngIf="changebttn2" pButton type="submit" [disabled]="!formtestG.valid" label="Agendar"  (click)="saveform()"></button>
+    <div class="secondpart">
+        <div class="formconsult" *ngIf="ShowConsult">
+            <form class="form" [formGroup]="formtest" (submit)="onSubmit()">
+                <div>
+                    <h4>Por favor diligencie su número de identificación</h4>
+                    <input type="text" class="input" placeholder="123457890" formControlName="cedula"
+                        (click)="showspan()" maxlength="10"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <div class="span" *ngIf="formtest.get('cedula')?.invalid && flagspan">
+                        Escriba un número de identificación válido
+                    </div>
+                    <div class="btts">
+                        <button pButton type="submit" [disabled]="!formtest.valid" label="Consultar"></button>
+                    </div>
                 </div>
+            </form>
+        </div>
+        <div class="infoDB">
+            <div *ngIf="ShowinfoDB">
+                <p> Estimado(a) <strong>{{user.name}}</strong>, su opinión es muy importante para nosotros. Por favor
+                    responda
+                    las preguntas que se muestran a continuación para su <strong>{{user.typeRequest}}</strong> con
+                    número
+                    de radicado <strong>{{user.filedNumber}}</strong>.
+                </p>
             </div>
-    </form>
-    </div>
-    <p-toast position="top-center"></p-toast>
+        </div>
+        <div class="formGeneral" *ngIf="ShowinfoDB">
+            <form class="form" [formGroup]="formtestG" (submit)="onSubmitG()">
+                <div>
+                    <div class="spanC"
+                        *ngIf="formtestG.get('Recibida')?.invalid || formtestG.get('Acorde')?.invalid || formtestG.get('Agendar')?.invalid">
+                        Campos requeridos*
+                    </div>
+                    <h4>1. ¿Recibió la respuesta a su solicitud?
+                        <div class="spanG" *ngIf="formtestG.get('Recibida')?.invalid">
+                            *
+                        </div>
+                    </h4>
+                    <p-radioButton type="radio" name="Recibida" value="Si" formControlName="Recibida"></p-radioButton>
+                    <label name="Recibida"> Sí</label><br><br>
+                    <p-radioButton type="radio" name="Recibida" value="No" formControlName="Recibida"></p-radioButton>
+                    <label name="Recibida"> No</label><br><br>
+                </div>
+                <div>
+                    <h4>2. ¿La respuesta recibida fue clara y acorde con su solicitud?
+                        <div class="spanG" *ngIf="formtestG.get('Acorde')?.invalid">
+                            *
+                        </div>
+                    </h4>
+                    <p-radioButton type="radio" name="Acorde" value="Si" formControlName="Acorde"></p-radioButton>
+                    <label name="Acorde"> Sí</label><br><br>
+                    <p-radioButton type="radio" name="Acorde" value="No" formControlName="Acorde"></p-radioButton>
+                    <label name="Acorde"> No</label><br><br>
+                </div>
+                <div>
+                    <h4>3. ¿Desea agendar una reunión con un funcionario de la CGR para aclarar sus dudas?
+                        <div class="spanG" *ngIf="formtestG.get('Agendar')?.invalid">
+                            *
+                        </div>
+                    </h4>
+                    <p-radioButton type="radio" name="Agendar" value="Si" (click)="changebuttonE()"
+                        formControlName="Agendar"></p-radioButton>
+                    <label name="Agendar"> Sí</label><br><br>
+                    <p-radioButton type="radio" name="Agendar" value="No" (click)="changebuttonA()"
+                        formControlName="Agendar"></p-radioButton>
+                    <label name="Agendar"> No</label><br><br>
+                    <div class="btts">
+                        <button *ngIf="changebttn1" pButton type="submit" [disabled]="!formtestG.valid" label="Enviar"
+                            (click)="saveform()"></button>
+                        <button *ngIf="changebttn2" pButton type="submit" [disabled]="!formtestG.valid" label="Agendar"
+                            (click)="saveform()"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <p-toast position="top-center"></p-toast>
 
-<!-- *ngIf="Showthanks1" <p>Cedula es, {{cedula}} Cedula en dB es, {{user.identificactionNumber}}, Recibida es {{Recibida}}, acorde es {{Acorde}} y agendar es {{Agendar}}</p> -->
-<div class="container2">
-    <div *ngIf="Showthanks1">
-        <div class="containerbanner">
-        <img src="../../assets/images/bannerweb.png" alt="Banner CGR" style="width:100%">
+        <!-- *ngIf="Showthanks1" <p>Cedula es, {{cedula}} Cedula en dB es, {{user.identificactionNumber}}, Recibida es {{Recibida}}, acorde es {{Acorde}} y agendar es {{Agendar}}</p> -->
+        <div class="container2">
+            <div *ngIf="Showthanks1">
+                <div class="containerbanner">
+                    <img src="../../assets/images/bannerweb.png" alt="Banner CGR" style="width:100%">
+                </div>
+                <p>
+                    Agradecemos su participación en las actividades de promoción y
+                    desarrollo de Control Fiscal Participativo, para nosotros es muy
+                    importante contar con su apoyo.<br><br>
+                    Recuerde que en la CGR contamos con canales de atención a la ciudadanía
+                    para aclarar sus dudas, seleccione <a
+                        href="https://www.contraloria.gov.co/es/web/guest/atencion-al-ciudadano/denuncias-y-otras-solicitudes-pqrd">aquí</a>
+                    para obtener más información.
+                    <img src="../../assets/images/Footer_mails.png" alt="Footer CGR" style="width:100%">
+                </p>
+            </div>
+            <div *ngIf="Showthanks2">
+                <div class="containerbanner">
+                    <img src="../../assets/images/bannerweb.png" alt="Banner CGR" style="width:100%">
+                </div>
+                <p>
+                    ​A continuación lo invitamos a agendar la sesión para aclarar sus inquietudes
+                    en el siguiente enlace: <a
+                        href="https://outlook.office365.com/owa/calendar/ReserveMeetingsTest@javeriana.edu.co/bookings/">Programación
+                        en línea</a>.
+                    <br><br>Agradecemos su participación en las actividades de promoción y desarrollo de
+                    Control Fiscal Participativo, para nosotros es muy importante contar con su apoyo.
+                    <img src="../../assets/images/Footer_mails.png" alt="Footer CGR" style="width:100%">
+                </p>
+            </div>
         </div>
-    <p>
-        Agradecemos su participación en las actividades de promoción y 
-        desarrollo de Control Fiscal Participativo, para nosotros es muy
-        importante contar con su apoyo.<br><br>
-        Recuerde que en la CGR contamos con canales de atención a la ciudadanía 
-        para aclarar sus dudas, seleccione <a href="https://www.contraloria.gov.co/es/web/guest/atencion-al-ciudadano/denuncias-y-otras-solicitudes-pqrd">aquí</a> para obtener más información.
-        <img src="../../assets/images/Footer_mails.png" alt="Footer CGR" style="width:100%">
-    </p>
     </div>
-    <div *ngIf="Showthanks2">
-        <div class="containerbanner">
-        <img src="../../assets/images/bannerweb.png" alt="Banner CGR" style="width:100%">
-        </div>
-    <p>
-        ​A continuación lo invitamos a agendar la sesión para aclarar sus inquietudes 
-        en el siguiente enlace: <a href="https://outlook.office365.com/owa/calendar/ReserveMeetingsTest@javeriana.edu.co/bookings/">Programación en línea</a>.
-        <br><br>Agradecemos su participación en las actividades de promoción y desarrollo de 
-        Control Fiscal Participativo, para nosotros es muy importante contar con su apoyo.
-        <img src="../../assets/images/Footer_mails.png" alt="Footer CGR" style="width:100%">
-    </p>
-    </div>
-</div>
-</div>
 </div>

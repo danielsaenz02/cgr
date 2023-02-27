@@ -1,0 +1,210 @@
+#container {
+    width: 75%;
+    margin: 50px auto;
+    background-color: rgba(30, 98, 201, 0.95);
+    border-radius: 15px;
+    min-width: 300px;
+    /*border: 1px solid blue;*/
+}
+
+.h4 {
+    font-size: 14px;
+}
+
+.header {
+    background-color: #2D3384;
+    width: 100%;
+    height: 200vx;
+    padding: 1px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.header h1 {
+    font-family: "Helvetica";
+    font-size: 28px;
+    /*25px*/
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+.header p {
+    font-family: "Arial";
+    font-size: 14px;
+    /*14px*/
+    line-height: 150%;
+    color: #ffffff;
+    text-align: justify;
+    padding: 10px;
+}
+
+.secondpart {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: "Arial";
+    color: #272833;
+    font-size: 14px;
+    text-align: left;
+}
+
+.formconsult {
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.formconsult h4 {
+    padding: 10px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
+.card {
+    padding: 1rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: #2D3384;
+    transition: transform 0.3s ease;
+}
+
+.card-info {
+    padding: 1rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.5em;
+    text-align: justify;
+    font-family: "Poppins", sans-serif;
+    font-weight:500;
+
+}
+
+.card-header,
+.card-footer {
+    border-color: #2D3384;
+    background-color: #2D3384;
+    color: #fff;
+    padding: 15px;
+}
+
+.card-title h6 {
+    padding: 20px 0 15px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-title-one {
+    padding: 20px 0 15px 0;
+    font-size: 30px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Info Cards */
+.info-card {
+    padding-bottom: 20px;
+}
+
+
+.info-card h6 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    margin: .5em;
+    padding: 0;
+}
+
+.info-card h5 {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    margin: .5em;
+    padding: 0;
+}
+
+
+.card-icon {
+    font-size: 33px;
+    line-height: 0;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.card-icon i {
+    font-size: 2rem;
+
+}
+
+.image {
+    height: 100px;
+}
+
+.image-gruop {
+    height: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .card-icon i {
+        font-size: 1.5rem;
+
+    }
+
+    .image {
+        height: 75px;
+    }
+
+    .image-group {
+        height: 35px;
+    }
+}
+
+.card-info a {
+    color: #2D3384;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.animation .card:hover {
+    transform: translateY(-10px);
+}
