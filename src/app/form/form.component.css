@@ -76,6 +76,9 @@
   border-color: #2D3384;
   box-shadow: 0 0 8px 0 #2D3384;
 }
+.spinner{
+  color: #2D3384;
+}
 .span{
   padding: 5px;
   font-family: "Arial";
