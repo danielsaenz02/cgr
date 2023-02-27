@@ -17,8 +17,11 @@
             <div class="span" *ngIf="formtest.get('cedula')?.invalid && flagspan">
                 Escriba un número de identificación válido
             </div>
-            <div class="btts">
+            <div class="btts" *ngIf="!flagload">
             <button pButton type="submit" [disabled]="!formtest.valid" label="Consultar" ></button>
+            </div>
+            <div class="spinner">
+            <p-progressSpinner [style]="{width: '50px', height: '50px'}" styleClass="custom-spinner" strokeWidth="5" fill="var(--surface-ground)" animationDuration="1s" *ngIf="flagload"></p-progressSpinner>
             </div>
         </div>
     </form>
@@ -98,7 +101,7 @@
         </div>
     <p>
         ​A continuación lo invitamos a agendar la sesión para aclarar sus inquietudes 
-        en el siguiente enlace: <a href="https://outlook.office365.com/owa/calendar/ReserveMeetingsTest@javeriana.edu.co/bookings/">Programación en línea</a>.
+        en el siguiente enlace: <a href="https://outlook.office365.com/owa/calendar/ReservasCGR@contraloriageneral.com/bookings/">Programación en línea</a>.
         <br><br>Agradecemos su participación en las actividades de promoción y desarrollo de 
         Control Fiscal Participativo, para nosotros es muy importante contar con su apoyo.
         <img src="../../assets/images/Footer_mails.png" alt="Footer CGR" style="width:100%">
